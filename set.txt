@@ -1,0 +1,22 @@
+npm规定，项目根目录中必须提供一个叫package.json的包管理配置文件，用来记录和项目有关的一些配置信息
+例如：
+项目的名称，版本号
+项目中用到的第三方模块
+哪些包只在开发版本用到
+哪些包在开发和生产版本都要用到
+
+
+多人协作时，第三方包的体积过大，不方便团队成员之间共享项目源码，解决方案：共享时剔除node_modules
+package.json可用来记录项目中安装了哪些包，方便剔除node_modules目录之后，在团队成员之间共享项目的源代码
+
+快速创建package.json文件
+npm init -y
+
+package.json文件中的dependencies节点用于记录npm安装了哪些包
+
+当一个项目剔除了node_modules之后，需要先把所有的包下载到项目中，才能运行项目，此时可以运行npm i 命令，一次性安装所有的依赖包
+npm i命令执行时，包管理工具会读取package.json文件中的dependencies节点，读取到记录所有依赖包的名称和版本号之后，将他们一次性下载到项目中
+
+npm uninstall 卸载包
+
+npm i 包名 -D 安装包，并记录到开发依赖devdependencies节点中
